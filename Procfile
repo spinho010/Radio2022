@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn imperionet.wsgi --preload --log-file –
+web: gunicorn radiofm.wsgi --preload --log-file –
