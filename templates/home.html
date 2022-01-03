@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-    {% csrf_token %}
     <title>Inicio</title>
 </head>
 
@@ -44,30 +43,31 @@
                 </div>
         </nav>
     </header>
-    
+
+
     {% if user.is_authenticated %}
         <h6></h6>
     {% else %}
         <style>
             body{
-                background-image: url(/static/image.jpeg);
+                background-image: url(/static/back.png);
             }
         </style>
-        <br><br>
-        <div class="card text-center" id="card1">
-            <div class="card-header">
-              Entrar Ou Cadastrar
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Rádio Litoral FM</h5>
-              <p class="card-text">Aqui você pode criar sua nova conta ou fazer seu Login!</p>
-              <a href="/accounts/login/" class="btn btn-primary">Fazer Login</a>
-              <a href="/accounts/signup/" class="btn btn-primary">Fazer o Cadastro</a>
-            </div>
-            <div class="card-footer text-muted">
-                Rádio Litoral FM
-            </div>
-          </div>
+        <br><br><br>
+        <main>
+            <h1>Entre ou Cadastre-se!</h1>
+            <hr>
+            <p>
+                Aqui é sua porta de entrada! <br>
+                Caso tenha uma conta, é so Entrar! <br>
+                Caso não tenha, Crie uma é bem rápido! <br>
+            </p>
+            <hr>
+            <a href="/accounts/login/" class="btn btn-primary" style="display: inline-block;">Fazer Login</a>
+            <p style="display: inline-block;">|</p>
+            <a href="/accounts/signup/" class="btn btn-primary" style="display: inline-block;">Fazer o Cadastro</a>
+        </main>
+
     {% endif %}
 </body>
 <style>
@@ -88,16 +88,20 @@
     }
 
     main {
-    background-color: white;
-    width: 1000px;
-    heigth: 900px;
-    margin: auto;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    border-radius: 10px;
-    text-align: center;
-    }
+        background-color: white;
+        width: auto;
+        heigth: 600px;
+        margin: auto;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding: 20px;
+        box-shadow: 6px 6px 10px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 15px;
+        text-align: center;
+         }
     h2{
     background-color: white;
     width: 250px;

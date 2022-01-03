@@ -13,7 +13,10 @@ from django.template.loader import get_template
 
 #TemplateView
 
-class PauloContruções(TemplateView):
+class PauloContruções(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('burlar_login')
     template_name = 'paulo.html'
 
 
+def login_requirido(request):
+    return render(request, 'requerid.html')

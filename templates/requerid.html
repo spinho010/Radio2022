@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <title>Login Requerido!</title>
+    <style>
+        main{
+            background-color: white;
+            heigth: 600px;
+            width: auto;
+            margin-left: 30px;
+            margin-right: 30px;
+            padding: 20px;
+            box-shadow: 6px 6px 10px black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border-radius: 15px;
+            color: black;
+            text-align: center;
+            }
+        body{
+            background: rgb(32, 143, 207);
+            background: linear-gradient(90deg, rgb(26, 66, 197) 0%, rgb(27, 124, 204) 0%, rgb(21, 120, 212) 15%, rgb(9, 167, 206) 27%); color: white;" >Nivel de Permissão: MENBRO</h5><br>
+    
+        }
+        </style>
+</head>
+<body>
+    <br><br>
+    <main>
+        <h2 style="font-weight: bold; ">Parece que esta tentando acessar uma pagina <br>
+             Porém não esta logado! <br>
+            Para continuar faça seu login, Ou crie sua conta para poder acessar!</h2><br>
+            <a href="/accounts/login"><button class="btn btn-primary">Fazer o Login</button></a>  <a href="/accounts/signup"><button class="btn btn-primary">Criar uma Conta</button></a>
+    </main>
+    <br><br>
+</body>
+</html>
