@@ -55,16 +55,35 @@ class ListCliente(LoginRequiredMixin, ListView):
         return self.object_list
 
 
-#class OpcoesPag(LoginRequiredMixin, TemplateView):
-    #login_url = reverse_lazy('burlar_login')
-    #template_name = 'pagamento.html'
+class OpcoesPag(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('burlar_login')
+    template_name = 'pagamento.html'
 
 
-#class PagamentoAprovado(LoginRequiredMixin, TemplateView):
-    #login_url = reverse_lazy('burlar_login')
-    #template_name = 'pagamento-aprovado.html'
+class PagamentoAprovado(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('burlar_login')
+    template_name = 'pagamento-aprovado.html'
 
 
-#class PagamentoProcessandp(LoginRequiredMixin, TemplateView):
-    #login_url = reverse_lazy('burlar_login')
-    #template_name = 'pagamento-process.html'
+class PagamentoProcessando(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('burlar_login')
+    template_name = 'pagamento-process.html'
+
+
+class CreateAssinatura(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('burlar_login')
+    model = CadastroFinal
+    fields = ['nome', 'data', 'endereco', 'contato', 'plano_solicitado']
+    template_name = 'create.html'
+    success_url = ('/finalizacao')
+
+
+class Finalizacao(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('burlar_login')
+    template_name = 'final.html'
+
+
+class ListFinal(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('burlar_login')
+    model = CadastroFinal
+    template_name = 'list-final.html'

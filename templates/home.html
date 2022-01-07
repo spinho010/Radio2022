@@ -227,7 +227,7 @@
                 </h1>
             </button>
         </a>
-        <a href="https://l.facebook.com/l.php?u=http%3A%2F%2Flitoralgospel123.myl2mr.com%2F%3Ffbclid%3DIwAR1W1Ts-xlLWCulGaGr6rfBL_jDueNOlhX_t5ju3r1djZ-XUDaSGSZau7Nc&h=AT1i4IRHIi31pXTKcL8QQyUfjpORTRvfnfI8b2UUWSgdNMMP_NHI7NWehH9Zy5FFkbf3aKkgBc26wXosz3bdTYTgcviCQa4rxXVlNGWEh01kiyLS8ieQsQwJqSAgtiteI_8iQQ" target="__blank">
+        <a href="http://www.radios.com.br/play/34684" target="__blank">
             <button class="novo-botao">
                 <h1 style="font-weight: bolder; font-family: Arial, Helvetica, sans-serif; font-size: 35px;">
                     <img style="width: 210px; display: inline-block; margin: 5px;" src="{% static 'icone-4.png' %}" alt="foto-icon">
@@ -266,6 +266,28 @@
                 </h1>
             </button>
         </a>
+        {% if user.groups.all.0.name == 'Dono' %}
+        <hr>
+        <a href="/list-final">
+            <button class="novo-botao">
+                <h1 style="font-weight: bolder; font-family: Arial, Helvetica, sans-serif; font-size: 35px;">
+                    <img style="width: 190px; margin: auto; padding: 1px;" src="{% static 'user.png' %}" alt="foto-icon">
+                    <p style="font-size: 40px;">Assinantes</p>
+                </h1>
+            </button>
+        </a>
+        <a href="/admin">
+            <button class="novo-botao">
+                <h1 style="font-weight: bolder; font-family: Arial, Helvetica, sans-serif; font-size: 35px;">
+                    <img style="width: 190px; margin: auto; padding: 1px;" src="{% static 'user.png' %}" alt="foto-icon">
+                    <p style="font-size: 40px;">Admin</p>
+                </h1>
+            </button>
+        </a>
+        {% else %}
+            <h1></h1>
+        {% endif %}
+        <hr>
         <br><br><br><br>
         <footer>
         <style>

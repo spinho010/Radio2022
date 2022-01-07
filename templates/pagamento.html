@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTRATO</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{% url 'pages:home' %}">Rádio Litoral FM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                    {% if user.is_authenticated %}
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                            <li class="nav-item text-nowrap">
+                                <a href="{% url 'account_logout' %}" class="nav-link">Sair</a>
+                            </li>
+                    </ul>
+                    {% else %}
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                        <li class="nav-item">
+                            <a href="{% url 'account_login' %}" class="nav-link">Entrar</a>
+                        </li>
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                        <li class="nav-item">
+                            <a href="{% url 'account_signup' %}" class="nav-link">Cadastrar</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+            </div>
+    </nav>
+</head>
+<body>
+    <style>
+
+        h11 {
+        background-color: white;
+        width: 700px;
+        heigth: 600px;
+        margin: auto;
+        padding: 10px;
+        box-shadow: 3px 3px 5px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        border-radius: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+        }
+    
+        main {
+            background-color: white;
+            width: auto;
+            heigth: 600px;
+            margin: auto;
+            margin-left: 25px;
+            margin-right: 25px;
+            padding: 20px;
+            box-shadow: 6px 6px 10px black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+             }
+        h2{
+        background-color: white;
+        width: 250px;
+        height: 100px;
+        margin: auto;
+        padding: 10px;
+        box-shadow: 6px 6px 10px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        border-radius: 10px;
+        text-align: left;
+        color: black;
+        }
+        h4{
+            font-size: 40px;
+            font-weight: bolder;
+        }
+    
+        body{
+            background-color: whitesmoke
+        }
+    
+        .novo-botao{
+                background-color: white;
+                width: 250px;
+                max-height: 600px;
+                margin: auto;
+                padding: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 25px;
+                border-radius: 15px;
+                text-align: center;
+                cursor: pointer;
+                color: black;
+                transition: all 1s;
+                margin-left: 85px;
+                margin-right: 60px
+            }
+                .novo-botao:hover{
+                transform: scale(1.1);
+                color: rgb(13, 94, 141);
+                border-radius: 20px;
+                box-shadow: 3px 3px 6px rgb(104, 104, 104);
+                border-color: rgb(17, 103, 231);
+            }
+            .container{
+                font-size: 30px;
+                text-align: center;
+            }
+        
+    </style>
+        
+    <br><br><br>
+        <h1 style="text-align: center; font-size: 65px;">
+            Nossos Planos!
+        </h1>
+        <hr>
+        <br>
+        <a href="/pagamento-aprovado">
+            <button class="novo-botao">
+                <h1 style="font-weight: bolder; padding: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 45px;">
+                    <img style="width: 200px; display: inline-block;" src="{% static 'logo-cliente.jpg' %}" alt="foto-icon">
+                    Semanal - R$250,00
+                </h1>
+            </button>
+        </a>
+        <a href="/pagamento-aprovado">
+            <button class="novo-botao">
+                <h1 style="font-weight: bolder; padding: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 41px;">
+                    <img style="width: 220px; display: inline-block;" src="{% static 'logo-cliente.jpg' %}" alt="foto-icon">
+                    <p style="font-size: 45px;"> Quinzenal - R$500,00</p>
+                </h1>
+            </button>
+        </a>
+        <a href="/pagamento-aprovado">
+            <button class="novo-botao">
+                <h1 style="font-weight: bolder; padding: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 41px;">
+                    <img style="width: 220px; display: inline-block;" src="{% static 'logo-cliente.jpg' %}" alt="foto-icon">
+                    <p style="font-size: 45px;"> Mensal - R$750,00</p>
+                </h1>
+            </button>
+        </a>
+        <hr>
+        <h1 style="text-align: center; font-size: 65px;">
+            Informações
+        </h1>
+        <hr>
+        <br>
+        <div class="container">
+            <h1 style="margin-left: 15px;">Plano Semanal</h1>
+            <p style="margin-left: 15px;">Com este plano você poderá...</p>
+            <br>
+            
+            <h1 style="margin-left: 15px;">Plano Quinzenal</h1>
+            <p style="margin-left: 15px;">Com este plano você poderá...</p>
+            <br>
+
+            <h1 style="margin-left: 15px;">Plano Mensal</h1>
+            <p style="margin-left: 15px;">Com este plano você poderá...</p>
+            <br>
+        </div>
+
+    <br><br><br><br>
+    
+    <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Select2 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    </body>
+    </html>
+</body>
+</html>

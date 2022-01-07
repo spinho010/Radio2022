@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Assinantes</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{% url 'pages:home' %}">Rádio Litoral FM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                    {% if user.is_authenticated %}
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                            <li class="nav-item text-nowrap">
+                                <a href="{% url 'account_logout' %}" class="nav-link">Sair</a>
+                            </li>
+                    </ul>
+                    {% else %}
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                        <li class="nav-item">
+                            <a href="{% url 'account_login' %}" class="nav-link">Entrar</a>
+                        </li>
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                        <li class="nav-item">
+                            <a href="{% url 'account_signup' %}" class="nav-link">Cadastrar</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+            </div>
+    </nav>
+</head>
+<body>
+    <style>
+        main{
+            background-color: white;
+                width: auto;
+                heigth: 600px;
+                margin-left: 20px;
+                margin-right: 20px;
+                padding: 15px;
+                box-shadow: 6px 6px 10px black;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 25px;
+                border-radius: 15px;
+                color: black;
+            }
+        body{
+            background-color: rgb(60, 117, 202);
+    
+        }
+        </style>
+        
+    
+        <br><br><br><br><br>
+        {% for CadastroFinal in object_list %}
+        <main>
+            <h3 style="font-weight: bold; text-align: left; font-size: 40px;">Nome: {{ CadastroFinal.nome }}</h3>
+            <hr>
+            <h3 style="font-weight: bold; text-align: left;">Serviço: {{ CadastroFinal.plano_solicitado }}</h3>
+            <h3 style="font-weight: bold; text-align: left;">Data: {{ CadastroFinal.data }}</h3> <br>
+            <h3 style="font-weight: bold; text-align: left;">Endereço: {{ CadastroFinal.endereco }}</h3> <br>
+            <h3 style="font-weight: bold; text-align: left;">Contato: {{ CadastroFinal.contato }}</h3> <br>
+        </main>
+        <br>
+        {% empty %}
+            <main>
+                <h1 style="font-weight: bold;">Nenhum Assinante Encontrado!</h1>
+                <hr>
+                <p style="font-weight: bold; font-size: 25px;">Consiga suas primeiras assinaturas, <br>
+                    Para que elas possam ficar visíveis aqui!</p>
+            </main>
+            <hr>
+        {% endfor %}
+    <br><br><br><br>
+    
+    <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Select2 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    </body>
+    </html>
+</body>
+</html>

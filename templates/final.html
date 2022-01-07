@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalização</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{% url 'pages:home' %}">Rádio Litoral FM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                    {% if user.is_authenticated %}
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                            <li class="nav-item text-nowrap">
+                                <a href="{% url 'account_logout' %}" class="nav-link">Sair</a>
+                            </li>
+                    </ul>
+                    {% else %}
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                        <li class="nav-item">
+                            <a href="{% url 'account_login' %}" class="nav-link">Entrar</a>
+                        </li>
+                    </ul>
+                        <ul class="navbar-nav px-3">
+                        <li class="nav-item">
+                            <a href="{% url 'account_signup' %}" class="nav-link">Cadastrar</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+            </div>
+    </nav>
+</head>
+<body>
+<style>
+    body{
+        background-color: rgb(32, 127, 235);
+    }
+    main{
+        width: auto;
+        height: 300px;
+        border-radius: 5px;
+        box-shadow: 3px 2px 2px rgb(47, 48, 47);
+        margin-left: 30px;
+        margin-right: 30px;
+        padding: 10px;
+        background-color: white;
+    }
+</style>
+    <br><br><br><br>
+    <main>
+        <h1 style="font-weight: bold;">Finalização</h1>
+        <hr>
+        <p style="font-weight: bold;">Seu pedido foi Concluido! <br>
+        Clique no botão abaixo para entrar em contato com um de nossos Atendentes pelo WhatsApp <br>
+        Lá, você resolverá os detalhes finais conosco!</p>
+        <a href="http://wa.me/5571996579421" target="__blank"><button type="button" class="btn btn-success">Clique Aqui!</button></a>
+    </main>
+    <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Select2 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    </body>
+    </html>
+</body>
+</html>
