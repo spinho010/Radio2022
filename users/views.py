@@ -56,8 +56,8 @@ class ListCliente(LoginRequiredMixin, ListView):
 
 
 #class OpcoesPag(LoginRequiredMixin, TemplateView):
-    login_url = reverse_lazy('burlar_login')
-    template_name = 'pagamento.html'
+    #login_url = reverse_lazy('burlar_login')
+    #template_name = 'pagamento.html'
 
 
 #class PagamentoAprovado(LoginRequiredMixin, TemplateView):
