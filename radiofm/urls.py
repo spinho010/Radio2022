@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from users.views import PauloContruções, login_requirido
+from users.views import PauloContruções, login_requirido, CadastroClienteView, Contrato, ListCliente
 from users import views
 
 urlpatterns = [
@@ -24,4 +24,7 @@ urlpatterns = [
     path("", include("pages.urls", namespace="pages")),
     path("divulgacao1/", PauloContruções.as_view(), name="divulgação"),
     path('requerid/', views.login_requirido, name="burlar_login"),
+    path('add-cliente/', CadastroClienteView.as_view(), name='add-cliente'),
+    path('contrato/', Contrato.as_view(), name='contrato'),
+    path('list-cliente/', ListCliente.as_view(), name='listar-cliente'),
 ]
